@@ -34,10 +34,10 @@ public class App {
             
             System.out.print("Желаете продолжить? 1 - да, 0 - нет: ");
             int flag = scanner.nextInt();
-            if (flag == 1) {
-                repeat = true;
-            } else {
+            if (flag == 0) {
                 repeat = false;
+            } else {
+                repeat = true;
             }
         }while(repeat);
     }
