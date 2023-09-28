@@ -18,18 +18,35 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         boolean repeat = true;
         int attempts = 3;
+        System.out.println("-----Game-----");
         do {
-            System.out.println("-----Game-----");
             Random rand = new Random();
             int averange = 11;
+            int userInput = 0;
             int numberRandom = rand.nextInt(averange);
-            System.out.print("Угадай число от 0 до 10: "); 
-            int userInput = scanner.nextInt(); scanner.nextLine();
-        
+            System.out.print("Угадай число от 0 до 10: ");
+            do {
+                try {
+                    userInput = scanner.nextInt(); scanner.nextLine();
+                    break;
+                } catch (Exception e) {
+                    System.out.print("Недопустимый ввод, попробуй еще раз: ");
+                    scanner.nextLine();
+                }
+            } while(true);
+            
             if (userInput == numberRandom) {
                 System.out.println("Ты угадал!");
+                System.out.println("Тебе добавлена еще 1 попытка!");
+                attempts++;
             } else {
                 System.out.println("Ты проиграл!");
+                if (numberRandom > userInput) {
+                    System.out.println("Подсказка: Загаданное число больше твоего");
+                }
+                if (numberRandom < userInput) {
+                    System.out.println("Подсказка: Загаданное число меньше твоего");
+                }
                 attempts =  attempts - 1;
                 System.out.println("Попыток осталось: " + attempts);
             }
