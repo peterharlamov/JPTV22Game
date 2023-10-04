@@ -19,11 +19,16 @@ public class App {
         boolean repeat = true;
         int attempts = 3;
         System.out.println("-----Game-----");
+
+        Random rand = new Random();
+        int averange = 11;
+        int userInput = 0;
+        int numberRandom = rand.nextInt(averange);
         do {
-            Random rand = new Random();
-            int averange = 11;
-            int userInput = 0;
-            int numberRandom = rand.nextInt(averange);
+            if (numberRandom == 0) {
+                numberRandom = rand.nextInt(averange);
+            }
+            System.out.println(numberRandom);
             System.out.print("Угадай число от 0 до 10: ");
             do {
                 try {
@@ -39,20 +44,21 @@ public class App {
                 System.out.println("Ты угадал!");
                 System.out.println("Тебе добавлена еще 1 попытка!");
                 attempts++;
+                numberRandom = rand.nextInt(averange);
             } else {
-                System.out.println("Ты проиграл!");
                 if (numberRandom > userInput) {
-                    System.out.println("Подсказка: Загаданное число больше твоего");
+                    System.out.println("Загаданное число больше твоего");
                 }
                 if (numberRandom < userInput) {
-                    System.out.println("Подсказка: Загаданное число меньше твоего");
+                    System.out.println("Загаданное число меньше твоего");
                 }
                 attempts =  attempts - 1;
                 System.out.println("Попыток осталось: " + attempts);
             }
             
             if (attempts <= 0) {
-                System.out.println("Твои попытки закончились!");
+                System.out.println("Твои попытки закончились! Было задуманно число: " + numberRandom);
+                numberRandom = rand.nextInt(averange);
                 System.out.print("Хотите завершить игру? 1 - да: ");
                 int flag = scanner.nextInt();
                 if (flag == 1) {

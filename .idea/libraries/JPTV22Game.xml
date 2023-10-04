@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="JPTV22Game">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/JPTV22Game.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
