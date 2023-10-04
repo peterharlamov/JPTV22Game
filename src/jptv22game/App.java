@@ -22,7 +22,7 @@ public class App {
 
         Random rand = new Random();
         int averange = 11;
-        int coins = 0;
+        int coins = 10;
         int userInput = 0;
         int numberRandom = rand.nextInt(averange);
         do {
