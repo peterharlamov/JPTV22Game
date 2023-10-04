@@ -1,4 +1,7 @@
 /build
 /dist
 /nbproject
+/out
+/.idea
 build.xml
+manifest.mf

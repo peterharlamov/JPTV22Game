@@ -22,6 +22,7 @@ public class App {
 
         Random rand = new Random();
         int averange = 11;
+        int coins = 0;
         int userInput = 0;
         int numberRandom = rand.nextInt(averange);
         do {
@@ -42,20 +43,25 @@ public class App {
             
             if (userInput == numberRandom) {
                 System.out.println("Ты угадал!");
-                System.out.println("Тебе добавлена еще 1 попытка!");
-                attempts++;
                 numberRandom = rand.nextInt(averange);
+                coins++;
             } else {
                 if (numberRandom > userInput) {
                     System.out.println("Загаданное число больше твоего");
+                    coins--;
                 }
                 if (numberRandom < userInput) {
                     System.out.println("Загаданное число меньше твоего");
+                    coins--;
                 }
                 attempts =  attempts - 1;
+                if (coins < 0) {
+                    coins = 0;
+                }
                 System.out.println("Попыток осталось: " + attempts);
+                System.out.println("Количество твоих монет: " + coins);
             }
-            
+
             if (attempts <= 0) {
                 System.out.println("Твои попытки закончились! Было задуманно число: " + numberRandom);
                 numberRandom = rand.nextInt(averange);
