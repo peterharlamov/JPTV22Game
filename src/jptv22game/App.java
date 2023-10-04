@@ -13,8 +13,7 @@ import java.util.Scanner;
  * @author pupil
  */
 public class App {
-    
-    void run() {
+    public void run() {
         Scanner scanner = new Scanner(System.in);
         boolean repeat = true;
         int attempts = 3;
@@ -22,9 +21,9 @@ public class App {
 
         Random rand = new Random();
         int averange = 11;
-        int coins = 10;
         int userInput = 0;
         int numberRandom = rand.nextInt(averange);
+        int coins = 10;
         do {
             if (numberRandom == 0) {
                 numberRandom = rand.nextInt(averange);
@@ -33,14 +32,15 @@ public class App {
             System.out.print("Угадай число от 0 до 10: ");
             do {
                 try {
-                    userInput = scanner.nextInt(); scanner.nextLine();
+                    userInput = scanner.nextInt();
+                    scanner.nextLine();
                     break;
                 } catch (Exception e) {
                     System.out.print("Недопустимый ввод, попробуй еще раз: ");
                     scanner.nextLine();
                 }
-            } while(true);
-            
+            } while (true);
+
             if (userInput == numberRandom) {
                 System.out.println("Ты угадал!");
                 numberRandom = rand.nextInt(averange);
@@ -54,12 +54,12 @@ public class App {
                     System.out.println("Загаданное число меньше твоего");
                     coins--;
                 }
-                attempts =  attempts - 1;
+                attempts = attempts - 1;
                 if (coins < 0) {
                     coins = 0;
                 }
                 System.out.println("Попыток осталось: " + attempts);
-                System.out.println("Количество твоих монет: " + coins);
+                System.out.println("Твой баланс монет: " + coins);
             }
 
             if (attempts <= 0) {
@@ -73,7 +73,6 @@ public class App {
                     attempts = 3;
                 }
             }
-        }while(repeat);
+        } while (repeat);
     }
-    
 }

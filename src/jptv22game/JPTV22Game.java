@@ -15,5 +15,7 @@ public class JPTV22Game {
         App app;
         app = new App();
         app.run();
+//        BalanceSaver balanceSaver = new BalanceSaver();
+//        balanceSaver.save();
     }
 }
