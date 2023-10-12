@@ -28,7 +28,6 @@ public class App {
             if (numberRandom == 0) {
                 numberRandom = rand.nextInt(averange);
             }
-            System.out.println(numberRandom);
             System.out.print("Угадай число от 0 до 10: ");
             do {
                 try {
@@ -39,7 +38,7 @@ public class App {
                     System.out.print("Недопустимый ввод, попробуй еще раз: ");
                     scanner.nextLine();
                 }
-            } while (true);
+            } while(true);
 
             if (userInput == numberRandom) {
                 System.out.println("Ты угадал!");
@@ -73,6 +72,6 @@ public class App {
                     attempts = 3;
                 }
             }
-        } while (repeat);
+        } while(repeat);
     }
 }
